@@ -1,4 +1,5 @@
-import { PrismaClient, } from "@prisma/client";
+import { prisma } from '../../database/respository';
+
 
 type Params = {
   id: string;
@@ -8,7 +9,6 @@ class DeleteUser {
 
 
   async execute({ id }: Params) {
-    const prisma = new PrismaClient();
 
     //validação dos campus capf e name
 

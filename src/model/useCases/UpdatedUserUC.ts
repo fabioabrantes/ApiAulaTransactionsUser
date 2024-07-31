@@ -1,4 +1,5 @@
-import { PrismaClient, } from "@prisma/client";
+import { prisma } from "../../database/respository";
+
 
 type Params = {
   id: string;
@@ -10,8 +11,6 @@ class UpdatedUserUC {
 
 
   async execute({ id,name,cpf }: Params) {
-    const prisma = new PrismaClient();
-
     //validação dos campus capf e name
 
     ///validação verificando se o amount >0 já está cadastrrado

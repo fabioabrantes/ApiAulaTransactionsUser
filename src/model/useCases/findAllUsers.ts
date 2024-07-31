@@ -1,15 +1,14 @@
-import { PrismaClient, } from "@prisma/client";
-
+import { prisma } from '../../database/respository';
 
 class FindAllUsers {
 
 
   async execute() {
-    const prisma = new PrismaClient();
 
     const users = await prisma.user.findMany({
       select: {
         cpf: true,
+        id:true,
         transactions: {
           select: {
             title: true,

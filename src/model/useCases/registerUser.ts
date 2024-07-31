@@ -1,4 +1,5 @@
-import { PrismaClient, } from "@prisma/client";
+import { prisma } from "../../database/respository";
+
 
 type Params = {
   cpf: string;
@@ -9,8 +10,7 @@ class RegisterUser {
 
 
   async execute({ cpf, name }: Params) {
-    const prisma = new PrismaClient();
-
+ 
     //validação dos campus capf e name
 
     ///validação verificando se o usario já está cadastrrado
